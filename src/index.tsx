@@ -31,7 +31,7 @@ function App() {
         mapStyle="mapbox://styles/mapbox/light-v9"
         mapboxAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
         interactiveLayerIds={["data"]}
-        projection={"equalEarth"}
+        projection={"naturalEarth"}
       >
         <Source type="geojson" data={data}>
           <Layer {...dataLayer} />

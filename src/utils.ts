@@ -24,7 +24,8 @@ const travelledCountryCode: Array<String> = [
   "HR",
   "GB",
   "IS",
-  "MN"
+  "MN",
+  "AT"
 ]
 
 export function updatePercentiles(
