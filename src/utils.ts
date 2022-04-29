@@ -1,8 +1,6 @@
 import type GeoJSON from "geojson"
 
 const travelledCountryCode: Array<String> = [
-  "SG",
-  "MY",
   "TH",
   "IN",
   "ID",
@@ -11,7 +9,6 @@ const travelledCountryCode: Array<String> = [
   "HK",
   "CN",
   "TW",
-  "NL",
   "KP",
   "RU",
   "US",
@@ -22,11 +19,13 @@ const travelledCountryCode: Array<String> = [
   "MX",
   "DE",
   "HR",
-  "GB",
   "IS",
   "MN",
-  "AT"
+  "AT",
+  "PT"
 ]
+
+const workedCountryCode: Array<String> = ["SG", "MY", "NL", "GB"]
 
 export function updatePercentiles(
   featureCollection: GeoJSON.FeatureCollection<GeoJSON.Geometry>
@@ -36,11 +35,15 @@ export function updatePercentiles(
   return {
     type: "FeatureCollection",
     features: features
-      .filter((feature) => travelledCountryCode.includes(feature.properties?.ISO_A2))
+      .filter(
+        (feature) =>
+          travelledCountryCode.includes(feature.properties?.ISO_A2) ||
+          workedCountryCode.includes(feature.properties?.ISO_A2)
+      )
       .map((feature) => {
         const properties = {
           ...feature.properties,
-          percentile: 0
+          percentile: travelledCountryCode.includes(feature.properties?.ISO_A2) ? 0 : 1
         }
         return { ...feature, properties }
       })

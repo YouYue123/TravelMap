@@ -7,7 +7,10 @@ export const dataLayer: FillLayer = {
   paint: {
     "fill-color": {
       property: "percentile",
-      stops: [[0, "#3288bd"]]
+      stops: [
+        [0, "#3288bd"],
+        [1, "#16c780"]
+      ]
     },
     "fill-opacity": 0.8
   }
