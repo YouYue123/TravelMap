@@ -1,4 +1,4 @@
 # TravelMap
 
-Object: Visulize the place I have travelled
+Objective: Visulize the place I have travelled
 
