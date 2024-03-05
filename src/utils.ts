@@ -5,8 +5,6 @@ const travelledCountryCode: Array<String> = [
   "IN",
   "ID",
   "NP",
-  "AU",
-  "HK",
   "CN",
   "TW",
   "KP",
@@ -22,7 +20,10 @@ const travelledCountryCode: Array<String> = [
   "IS",
   "MN",
   "AT",
-  "PT"
+  "PT",
+  "CH",
+  "IT",
+  "VN",
 ]
 
 const workedCountryCode: Array<String> = ["SG", "MY", "NL", "GB"]
